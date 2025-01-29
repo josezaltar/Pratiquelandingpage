@@ -1,0 +1,167 @@
+@use 'variaveis';
+
+body {
+    position: relative;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: none;
+
+    &::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('../images/fundo.png') no-repeat center center/cover;
+        opacity: 0.75; 
+        z-index: -1; 
+    }
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+
+    &__text {
+        max-width: 90%;
+        margin-bottom: 40px;
+    }
+
+    &__title {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+
+    &__countdown {
+        font-size: 28px; 
+        font-weight: bold; 
+        color: variaveis.$textColor;
+        text-transform: uppercase; 
+        letter-spacing: 2px; 
+    
+        text-shadow: 0 0 10px variaveis.$textColor, 0 0 20px variaveis.$textColor;
+    
+        animation: pulse 1.5s infinite;
+    
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                text-shadow: 0 0 10px variaveis.$textColor, 0 0 20px variaveis.$textColor;
+            }
+            50% {
+                transform: scale(1.1);
+                text-shadow: 0 0 15px variaveis.$textColor, 0 0 30px variaveis.$textColor;
+            }
+            100% {
+                transform: scale(1);
+                text-shadow: 0 0 10px variaveis.$textColor, 0 0 20px variaveis.$textColor;
+            }
+        }
+    
+        #contador {
+            color: variaveis.$button; 
+            font-size: 32px; 
+            font-weight: 900; 
+            text-shadow: 0 0 10px variaveis.$button, 0 0 20px variaveis.$button;
+        }
+    }
+    
+
+    &__event-details {
+        background: rgba(0, 0, 0, 0.6); 
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 30px;
+
+        &__title {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        &__info {
+            margin-top: 20px;
+            font-size: 16px;
+            line-height: 2;
+        }
+    }
+
+    &__button {
+        margin-top: 40px;
+        font-size: 1.5rem;
+        padding: 15px 30px;
+        border-radius: 10px;
+        border: none;
+        background-color: variaveis.$button;  
+        color: variaveis.$textColor; 
+        
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        button {
+            all: unset;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            
+        }
+    }
+}
+
+.fantasias {
+    background: rgba(0, 0, 0, 0.6); 
+    padding: 4rem;
+    max-width: 1200px;
+    margin: 40px auto;
+    border-radius: 10px;
+}
+
+@media (max-width: 1024px) {
+    .hero__text {
+        h1 {
+            font-size: 2rem;
+        }
+        h2 {
+            font-size: 1.5rem;
+        }
+    }
+
+    .hero__button button {
+        font-size: 1.2rem;
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    .hero__text {
+        h1 {
+            font-size: 1.8rem;
+        }
+        h2 {
+            font-size: 1.3rem;
+        }
+    }
+
+    .hero__button button {
+        font-size: 1rem;
+        padding: 0.6rem 1rem;
+    }
+}
