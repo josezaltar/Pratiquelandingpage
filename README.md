@@ -43,7 +43,7 @@ Você precisa ter o [Node.js](https://nodejs.org/en/) (que inclui o `npm`) insta
 
 1.  Clone o repositório:
     ```sh
-    git clone [https://github.com/SEU_USUARIO/projeto-contador.git](https://github.com/SEU_USUARIO/projeto-contador.git)
+    git clone [https://github.com/josezaltar/Pratiquelandingpage.git](https://github.com/josezaltar/Pratiquelandingpage.git)
     ```
 2.  Navegue até o diretório do projeto:
     ```sh
